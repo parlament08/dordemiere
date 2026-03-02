@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DorDeMiere — натуральный мёд</title>
+  <meta name="description" content="Натуральный мёд прямо с пасеки. Заказ, доставка, контакты." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="page">
+  <a class="page__skip-link" href="#main">Перейти к содержимому</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__container">
+      <a class="header__brand" href="#top" aria-label="DorDeMiere — на главную">
+        <span class="header__name">
+          <span class="header__name-part">Dor</span>
+          <span class="header__name-dot" aria-hidden="true">•</span>
+          <span class="header__name-part">De</span>
+          <span class="header__name-dot" aria-hidden="true">•</span>
+          <span class="header__name-part">Miere</span>
+        </span>
+      </a>
+
+      <nav class="header__nav" aria-label="Основная навигация">
+        <a class="header__nav-link" href="#advantages" data-i18n="nav.about">Наш мёд</a>
+        <a class="header__nav-link" href="#products" data-i18n="nav.products">Мёд и цены</a>
+        <a class="header__nav-link" href="#how-to-order" data-i18n="nav.order">Как заказать</a>
+        <a class="header__nav-link" href="#contacts" data-i18n="nav.contacts">Контакты</a>
+      </nav>
+      <button class="lang-toggle" type="button" aria-label="Switch language">RU</button>
+
+      <button
+        class="header__menu-toggle"
+        type="button"
+        aria-label="Открыть меню"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <span class="header__menu-icon" aria-hidden="true">☰</span>
+      </button>
+    </div>
+
+    <!-- Mobile menu (overlay container, behavior via JS later) -->
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Мобильное меню" hidden>
+      <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+        <div class="mobile-menu__header">
+          <h2 class="mobile-menu__title" id="mobile-menu-title" data-i18n="mobile.menu.title">Меню</h2>
+          <button
+            class="mobile-menu__close"
+            type="button"
+            aria-label="Закрыть меню"
+            aria-controls="mobile-menu"
+            aria-expanded="true"
+          >
+            <span aria-hidden="true">✕</span>
+          </button>
+        </div>
+
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#advantages" data-i18n="mobile.nav.about">Наш мёд</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#products" data-i18n="mobile.nav.products">Мёд и цены</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#how-to-order" data-i18n="mobile.nav.order">Как заказать</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#contacts" data-i18n="mobile.nav.contacts">Контакты</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="main" id="main" tabindex="-1">
+    <!-- Hero -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__container">
+        <header class="hero__header">
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__title-small" data-i18n="hero.title.small">НАТУРАЛЬНЫЙ</span>
+            <span class="hero__title-big" data-i18n="hero.title.big">МЁД</span>
+          </h1>
+
+          <p class="hero__subtitle" data-i18n="hero.subtitle" data-i18n-html="true">
+            Вкусный органический мёд<br />
+            прямо с пасеки
+          </p>
+        </header>
+
+        <figure class="hero__visual">
+          <img
+            class="hero__image"
+            src="assets/hero-jar.png"
+            alt="Банка натурального мёда"
+            width="640"
+            height="640"
+            loading="eager"
+          />
+        </figure>
+
+        <div class="hero__actions" role="group" aria-label="Действия">
+          <a class="button button--primary hero__button" href="#products" data-i18n="hero.cta.order">
+            Заказать
+          </a>
+          <a class="button button--secondary hero__button" href="#advantages" data-i18n="hero.cta.about">
+            О мёде
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advantages -->
+    <section class="advantages" id="advantages" aria-labelledby="advantages-title">
+      <div class="advantages__container">
+        <h2 class="advantages__title" id="advantages-title" data-i18n="advantages.title" data-i18n-html="true">ПОЧЕМУ ПОКУПАЮТ<br />НАШ МЁД</h2>
+
+        <ul class="advantages__list" aria-label="Преимущества">
+          <li class="advantages__item card card--accent" tabindex="0">
+            <div class="advantages__icon" aria-hidden="true">
+              <img src="assets/nature-product.png" alt="" width="64" height="64" loading="lazy" />
+            </div>
+            <div class="advantages__divider" aria-hidden="true"></div>
+            <h3 class="advantages__item-title" data-i18n="advantages.natural.title">Натуральный продукт</h3>
+            <p class="advantages__item-text" data-i18n="advantages.natural.text">Чистый мёд без сиропов и добавок.</p>
+          </li>
+
+          <li class="advantages__item card card--accent" tabindex="0">
+            <div class="advantages__icon" aria-hidden="true">
+              <img src="assets/assorti.png" alt="" width="64" height="64" loading="lazy" />
+            </div>
+            <div class="advantages__divider" aria-hidden="true"></div>
+            <h3 class="advantages__item-title" data-i18n="advantages.assortment.title">Ассортимент</h3>
+            <p class="advantages__item-text" data-i18n="advantages.assortment.text">Акация, полифлора, липа — выбирайте по вкусу.</p>
+          </li>
+
+          <li class="advantages__item card card--accent" tabindex="0">
+            <div class="advantages__icon" aria-hidden="true">
+              <img src="assets/own.png" alt="" width="64" height="64" loading="lazy" />
+            </div>
+            <div class="advantages__divider" aria-hidden="true"></div>
+            <h3 class="advantages__item-title" data-i18n="advantages.apiary.title">Собственная пасека</h3>
+            <p class="advantages__item-text" data-i18n="advantages.apiary.text">Собираем мёд прямо с пасеки.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products" aria-labelledby="products-title">
+      <div class="products__container">
+        <h2 class="products__title" id="products-title" data-i18n="products.title">МЁД И ЦЕНЫ</h2>
+
+        <div class="products__grid" role="list" aria-label="Товары">
+          <!-- Card 1 -->
+          <article class="product-card products__item card card--surface" role="listitem" aria-labelledby="product-1-title">
+            <figure class="product-card__media">
+              <div class="product-card__image-frame" aria-hidden="true"></div>
+              <img
+                class="product-card__image"
+                src="assets/podsolnuh.png"
+                alt="Мёд из трав и подсолнечника"
+                width="720"
+                height="420"
+                loading="lazy"
+              />
+            </figure>
+
+            <div class="product-card__content">
+              <h3 class="product-card__title" id="product-1-title" data-i18n="products.item1.title">МЁД ИЗ ТРАВ И ПОДСОЛНУХА</h3>
+
+              <p class="product-card__price">
+                <span class="product-card__price-value">120</span>
+                <span class="product-card__price-unit" data-i18n="products.price.unit">лей/кг</span>
+              </p>
+
+              <p class="product-card__description" data-i18n="products.item1.description">Ароматный, насыщенный вкус</p>
+
+              <a class="button button--primary product-card__button" href="#contacts" aria-label="Заказать: мёд из трав и подсолнечника" data-i18n="products.cta">
+                Заказать
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="product-card products__item card card--surface" role="listitem" aria-labelledby="product-2-title">
+            <figure class="product-card__media">
+              <div class="product-card__image-frame" aria-hidden="true"></div>
+              <img
+                class="product-card__image"
+                src="assets/lipa.jpg"
+                alt="Мёд из липы"
+                width="720"
+                height="420"
+                loading="lazy"
+              />
+            </figure>
+
+            <div class="product-card__content">
+              <h3 class="product-card__title" id="product-2-title" data-i18n="products.item2.title">МЁД ИЗ ЛИПЫ</h3>
+
+              <p class="product-card__price">
+                <span class="product-card__price-value">160</span>
+                <span class="product-card__price-unit" data-i18n="products.price.unit">лей/кг</span>
+              </p>
+
+              <p class="product-card__description" data-i18n="products.item2.description">Мягкий вкус и тонкий аромат</p>
+
+              <a class="button button--primary product-card__button" href="#contacts" aria-label="Заказать: мёд из липы" data-i18n="products.cta">
+                Заказать
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="product-card products__item card card--surface" role="listitem" aria-labelledby="product-3-title">
+            <figure class="product-card__media">
+              <div class="product-card__image-frame" aria-hidden="true"></div>
+              <img
+                class="product-card__image"
+                src="assets/acacia.jpg"
+                alt="Акациевый мёд"
+                width="720"
+                height="420"
+                loading="lazy"
+              />
+            </figure>
+
+            <div class="product-card__content">
+              <h3 class="product-card__title" id="product-3-title" data-i18n="products.item3.title">МЁД ИЗ АКАЦИИ</h3>
+
+              <p class="product-card__price">
+                <span class="product-card__price-value">180</span>
+                <span class="product-card__price-unit" data-i18n="products.price.unit">лей/кг</span>
+              </p>
+
+              <p class="product-card__description" data-i18n="products.item3.description">Светлый, нежный и долго не кристаллизуется</p>
+
+              <a class="button button--primary product-card__button" href="#contacts" aria-label="Заказать: мёд из акации" data-i18n="products.cta">
+                Заказать
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to order -->
+    <section class="how-to-order" id="how-to-order" aria-labelledby="howto-title">
+      <div class="how-to-order__container">
+        <h2 class="how-to-order__title" id="howto-title" data-i18n="order.title">КАК ЗАКАЗАТЬ</h2>
+
+        <ol class="how-to-order__steps" aria-label="Шаги заказа">
+          <li class="how-to-order__step" aria-labelledby="step-1-title">
+            <div class="how-to-order__badge" aria-hidden="true">1</div>
+            <h3 class="how-to-order__step-title" id="step-1-title" data-i18n="order.step1.title">Позвоните или напишите нам</h3>
+            <p class="how-to-order__step-text" data-i18n="order.step1.text">Свяжитесь с нами любым удобным способом - мы подскажем сорт, наличие и стоимость</p>
+          </li>
+
+          <li class="how-to-order__step" aria-labelledby="step-2-title">
+            <div class="how-to-order__badge" aria-hidden="true">2</div>
+            <h3 class="how-to-order__step-title" id="step-2-title" data-i18n="order.step2.title">Осуществляем доставку либо самовывоз</h3>
+            <p class="how-to-order__step-text" data-i18n="order.step2.text">Получите свежий мёд с доставкой или передадим при встрече</p>
+          </li>
+        </ol>
+
+        <div class="how-to-order__visual" aria-hidden="true">
+          <div class="how-to-order__phone">
+            <span class="how-to-order__phone-ring how-to-order__phone-ring--1"></span>
+            <span class="how-to-order__phone-ring how-to-order__phone-ring--2"></span>
+            <span class="how-to-order__phone-ring how-to-order__phone-ring--3"></span>
+          </div>
+          <div class="how-to-order__route">
+            <span class="how-to-order__route-dot how-to-order__route-dot--1"></span>
+            <span class="how-to-order__route-dot how-to-order__route-dot--2"></span>
+            <span class="how-to-order__route-dot how-to-order__route-dot--3"></span>
+          </div>
+          <div class="how-to-order__box">
+            <span class="how-to-order__box-check"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacts -->
+    <section class="contacts" id="contacts" aria-labelledby="contacts-title">
+      <div class="contacts__container">
+        <div class="contacts__panel">
+          <div class="contacts__intro">
+            <h2 class="contacts__title" id="contacts-title" data-i18n="contacts.title">КОНТАКТЫ</h2>
+            <p class="contacts__lead" data-i18n="contacts.lead">С радостью ответим на ваши вопросы и подберём удобный способ получения.</p>
+          </div>
+
+          <div class="contacts__content">
+            <div class="contacts__locations">
+              <article class="contacts__location-card contacts__item" aria-labelledby="location-1-title">
+                <h3 class="contacts__location-city" id="location-1-title" data-i18n="contacts.city1">Кишинев</h3>
+                <address class="contacts__address">
+                  <a class="contacts__phone" href="tel:+37369396624" data-i18n-aria-label="contacts.phone1.aria" aria-label="Позвонить в Кишинев: +373 69 396 624">
+                    +373 69 396 624
+                  </a>
+                </address>
+              </article>
+
+              <article class="contacts__location-card contacts__item" aria-labelledby="location-2-title">
+                <h3 class="contacts__location-city" id="location-2-title" data-i18n="contacts.city2">Дондюшаны</h3>
+                <address class="contacts__address">
+                  <a class="contacts__phone" href="tel:+37369494508" data-i18n-aria-label="contacts.phone2.aria" aria-label="Позвонить в Дондюшаны: +373 69 494 508">
+                    +373 69 494 508
+                  </a>
+                </address>
+              </article>
+            </div>
+
+            <ul class="contacts__social" data-i18n-aria-label="contacts.social.aria" aria-label="Социальные сети">
+              <li>
+                <a class="contacts__social-link contacts__social-link--facebook contacts__item" href="{FACEBOOK_URL}" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="contacts.facebook.aria" aria-label="Открыть Facebook">
+                  <span class="contacts__social-icon" aria-hidden="true">
+                    <i class="fab fa-facebook-f contacts__icon-glyph"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="contacts__social-link contacts__social-link--telegram contacts__item" href="{TELEGRAM_URL}" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="contacts.telegram.aria" aria-label="Открыть Telegram">
+                  <span class="contacts__social-icon" aria-hidden="true">
+                    <i class="fab fa-telegram-plane contacts__icon-glyph"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="contacts__social-link contacts__social-link--instagram contacts__item" href="{INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="contacts.instagram.aria" aria-label="Открыть Instagram">
+                  <span class="contacts__social-icon" aria-hidden="true">
+                    <i class="fab fa-instagram contacts__icon-glyph"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__container">
+      <p class="footer__text">© <span class="footer__year">2026</span> <span data-i18n="footer.rights">DorDeMiere. Все права защищены.</span></p>
+    </div>
+  </footer>
+
+  <!-- Floating Call Button -->
+  <a class="floating-call" href="tel:+37379112233" aria-label="Позвонить: +373 79 11 22 33">
+    <i class="fas fa-phone floating-call__icon" aria-hidden="true"></i>
+  </a>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
