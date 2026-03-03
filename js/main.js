@@ -562,6 +562,74 @@
     desktopQuery.addEventListener("change", syncDesktopState);
   };
 
+  const initFloatingCallMenu = () => {
+    const trigger = document.querySelector(".floating-call");
+    const menu = document.getElementById("floating-call-menu");
+    if (!trigger || !menu) {
+      return;
+    }
+
+    const desktopQuery = window.matchMedia("(min-width: 1024px)");
+    let isOpen = false;
+
+    const setOpenState = (open) => {
+      isOpen = open;
+      menu.hidden = !open;
+      trigger.setAttribute("aria-expanded", String(open));
+    };
+
+    const closeMenu = () => {
+      if (!isOpen) {
+        return;
+      }
+      setOpenState(false);
+    };
+
+    const openMenu = () => {
+      if (desktopQuery.matches || isOpen) {
+        return;
+      }
+      setOpenState(true);
+    };
+
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!isOpen) {
+        return;
+      }
+      if (menu.contains(event.target) || trigger.contains(event.target)) {
+        return;
+      }
+      closeMenu();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    menu.querySelectorAll("a[href^=\"tel:\"]").forEach((link) => {
+      link.addEventListener("click", () => {
+        closeMenu();
+      });
+    });
+
+    desktopQuery.addEventListener("change", (event) => {
+      if (event.matches) {
+        closeMenu();
+      }
+    });
+  };
+
   const initHeroMotion = () => {
     const hero = document.querySelector(".hero");
     const heroVisual = document.querySelector(".hero__visual");
@@ -954,6 +1022,7 @@
   initHeaderScrollEffect();
   initActiveNavigation();
   initDesktopPhoneLock();
+  initFloatingCallMenu();
   initHeroMotion();
   initAdvantagesInteractions();
   initProductsInteractions();

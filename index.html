@@ -361,9 +361,25 @@
   </footer>
 
   <!-- Floating Call Button -->
-  <a class="floating-call" href="tel:+37379112233" aria-label="Позвонить: +373 79 11 22 33">
+  <button class="floating-call" type="button" aria-label="Выбрать номер для звонка" aria-expanded="false" aria-controls="floating-call-menu">
     <i class="fas fa-phone floating-call__icon" aria-hidden="true"></i>
-  </a>
+  </button>
+  <div class="floating-call-menu" id="floating-call-menu" hidden>
+    <a class="floating-call-menu__item" href="tel:+37369494508" aria-label="Позвонить в Дондюшаны: +373 69 494 508">
+      <span class="floating-call-menu__city">Дондюшаны</span>
+      <span class="floating-call-menu__number">
+        <i class="fas fa-phone-volume floating-call-menu__phone-icon" aria-hidden="true"></i>
+        +373 69 494 508
+      </span>
+    </a>
+    <a class="floating-call-menu__item" href="tel:+37369396624" aria-label="Позвонить в Кишинёв: +373 69 396 624">
+      <span class="floating-call-menu__city">Кишинёв</span>
+      <span class="floating-call-menu__number">
+        <i class="fas fa-phone-volume floating-call-menu__phone-icon" aria-hidden="true"></i>
+        +373 69 396 624
+      </span>
+    </a>
+  </div>
   <script src="js/main.js" defer></script>
 </body>
 </html>

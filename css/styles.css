@@ -2002,7 +2002,10 @@ body.menu-open {
   color: #fff;
   display: grid;
   place-items: center;
+  border: 0;
   text-decoration: none;
+  cursor: pointer;
+  appearance: none;
   box-shadow: 0 10px 22px rgba(51, 43, 36, 0.28);
   transition: transform var(--duration-fast) var(--ease-out),
     box-shadow var(--duration-base) var(--ease-out),
@@ -2040,6 +2043,57 @@ body.menu-open {
 
 .floating-call:hover .floating-call__icon {
   transform: rotate(-8deg);
+}
+
+.floating-call-menu {
+  position: fixed;
+  right: var(--space-5);
+  bottom: calc(var(--space-6) + var(--floating-size) + var(--space-3));
+  z-index: 69;
+  display: grid;
+  gap: var(--space-2);
+  width: min(84vw, 252px);
+}
+
+.floating-call-menu[hidden] {
+  display: none;
+}
+
+.floating-call-menu__item {
+  display: grid;
+  gap: 2px;
+  padding: 11px 14px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--color-surface) 92%, #fff);
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 8px 20px rgba(51, 43, 36, 0.14);
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+
+.floating-call-menu__city {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.floating-call-menu__number {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.2;
+  color: var(--color-text-secondary);
+}
+
+.floating-call-menu__phone-icon {
+  color: var(--color-primary);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.floating-call-menu__item:active {
+  transform: translateY(1px);
 }
 
 @keyframes floating-call-pulse {
@@ -2769,6 +2823,10 @@ body.menu-open {
 
 @media (min-width: 1024px) {
   .floating-call {
+    display: none;
+  }
+
+  .floating-call-menu {
     display: none;
   }
 
