@@ -2791,6 +2791,19 @@ body.menu-open {
 }
 
 @media (max-width: 767px) {
+  .contacts__social-link .contacts__social-icon::before {
+    top: 0;
+  }
+
+  .contacts__social-link .contacts__icon-glyph {
+    color: #ffffff;
+    transform: none;
+  }
+
+  .contacts__social-link .contacts__social-icon {
+    border-color: transparent;
+  }
+
   .header__brand-image {
     width: clamp(118px, 34vw, 154px);
   }
